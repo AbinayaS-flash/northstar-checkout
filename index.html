@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A simple demo store checkout." />
+  <title>Northstar Goods — Checkout</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Northstar Goods home"><span class="brand-mark">N</span> northstar<span class="brand-light">goods</span></a>
+    <span class="secure-note"><span aria-hidden="true">●</span> Demo checkout</span>
+  </header>
+
+  <main id="top" class="page-shell">
+    <section class="intro">
+      <p class="eyebrow">YOUR CART, YOUR CALL</p>
+      <h1>Almost yours.</h1>
+      <p class="intro-copy">A few thoughtful essentials, ready when you are.</p>
+    </section>
+
+    <div class="checkout-layout">
+      <section class="panel products-panel" aria-labelledby="products-title">
+        <div class="panel-heading"><div><p class="eyebrow">THE COLLECTION</p><h2 id="products-title">Choose your goods</h2></div><span class="count-pill" id="cart-count">0 items</span></div>
+        <div class="product-list">
+          <article class="product-card">
+            <div class="product-art art-mug" aria-hidden="true"><span>☕</span></div>
+            <div class="product-info"><span class="product-category">DAILY RITUAL</span><h3>Studio Ceramic Mug</h3><p>Hand-finished stoneware · 350 ml</p><strong>₹ 499.00</strong></div>
+            <button class="add-button" type="button" data-add="mug">Add <span aria-hidden="true">+</span></button>
+          </article>
+          <article class="product-card">
+            <div class="product-art art-tote" aria-hidden="true"><span>▱</span></div>
+            <div class="product-info"><span class="product-category">EVERYDAY CARRY</span><h3>Everyday Canvas Tote</h3><p>Recycled cotton · Natural</p><strong>₹ 799.00</strong></div>
+            <button class="add-button" type="button" data-add="tote">Add <span aria-hidden="true">+</span></button>
+          </article>
+        </div>
+        <p class="shipping-note"><span aria-hidden="true">✳</span> Thoughtfully packed. No shipping fee in this demo.</p>
+      </section>
+
+      <section class="panel summary-panel" aria-labelledby="summary-title">
+        <div class="panel-heading"><div><p class="eyebrow">THE DETAILS</p><h2 id="summary-title">Your order</h2></div><span class="step-label">01 / 01</span></div>
+        <div id="cart-lines" class="cart-lines" aria-live="polite"><p class="empty-cart">Your cart is taking a little breather.<br />Add something lovely to get started.</p></div>
+        <div class="totals"><div class="total-row"><span>Subtotal</span><span id="subtotal">₹ 0.00</span></div><div class="total-row"><span>Shipping</span><span class="free-label">FREE</span></div><div class="total-row grand-total"><span>Total</span><strong id="order-total">₹ 0.00</strong></div></div>
+        <form id="checkout-form" novalidate>
+          <label for="customer-name">Your name <span class="required">*</span></label>
+          <input id="customer-name" name="customerName" type="text" autocomplete="name" placeholder="e.g. Alex Morgan" aria-describedby="name-error" />
+          <p id="name-error" class="field-error" role="alert" hidden>Please enter your name to continue.</p>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+          <button id="place-order" class="checkout-button" type="submit">Place order <span aria-hidden="true">→</span></button>
+          <p class="fine-print">This is a demo checkout. No payment will be taken.</p>
+        </form>
+        <section id="confirmation" class="confirmation" role="status" aria-live="polite" hidden>
+          <div class="success-icon" aria-hidden="true">✓</div><p class="eyebrow">ORDER CONFIRMED</p><h2>You're all set.</h2><p id="confirmation-copy">Thanks for your order.</p><div class="reference-box"><span>ORDER REFERENCE</span><strong id="order-reference"></strong></div>
+        </section>
+      </section>
+    </div>
+    <footer>Made for the little things that make a day. <span>Northstar Goods · Checkout demo</span></footer>
+  </main>
+</body>
+</html>
